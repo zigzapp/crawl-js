@@ -23,6 +23,8 @@ const weapons = [
   { name: 'sword', power: 100 }
 ];
 
+button1.addEventListener(change)
+
 const locations = [
   {
     name: "town square",
