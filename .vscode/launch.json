@@ -5,6 +5,33 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch via NPM start",
+            "request": "launch",
+            "runtimeArgs": [
+                "start",
+                "http://localhost:8000"
+            ],
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            "cwd":"${workspaceFolder}"
+        },
+        {
+            "name": "Launch via NPM test",
+            "request": "launch",
+            "runtimeArgs": [
+                "test"
+            ],
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            "cwd":"${workspaceFolder}"
+        },
+        {
             "type": "msedge",
             "request": "launch",
             "name": "Open index.html",

@@ -1,5 +1,5 @@
-const { normalizeURL, getURLsFromHTML } = require('./crawl.js')
-const { test, expect } = require('@jest/globals')
+import { test, expect } from '@jest/globals';
+import { normalizeURL, getURLsFromHTML } from './crawl.js';
 
 test('normalizeURL strip https', () => {
     const input = 'https://boot.dev/path'
@@ -7,6 +7,7 @@ test('normalizeURL strip https', () => {
     const expected = 'boot.dev/path'
     expect(actual).toEqual(expected)
 })
+
 
 test('normalizeURL strip end slash', () => {
     const input = 'https://boot.dev/path/'
