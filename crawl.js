@@ -2,19 +2,19 @@ import {JSDOM} from './imports.cjs'
 import fetch from 'node-fetch'
 
 export async function crawlPage(baseURL, currentURL, pages){
-    console.log (`crawler starting with ${currentURL}`)
+    // console.log (`crawler starting with ${currentURL}`)
 
 
     const baseURLObj = new URL(baseURL)
     const currentURLObj = new URL(currentURL)
     if (baseURLObj.hostname !== currentURLObj.hostname){
-        console.log(`url out of domain ${currentURL}`)
+        // console.log(`url out of domain ${currentURL}`)
         return pages
     }
 
     const normalizedCurrentURL = normalizeURL(currentURL)
     if (normalizedCurrentURL in pages){
-        console.log(`page already visited ${currentURL}`)
+        // console.log(`page already visited ${currentURL}`)
         pages[normalizedCurrentURL]++
         return pages
     }   else {
@@ -50,7 +50,7 @@ export async function crawlPage(baseURL, currentURL, pages){
        console.log(`error fetching ${currentURL}: ${err.message}`) 
     }
 
-    console.log(`ended crawling ${currentURL}`)
+    // console.log(`ended crawling ${currentURL}`)
 
     return pages
 }

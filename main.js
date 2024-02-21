@@ -1,4 +1,5 @@
-import { normalizeURL, crawlPage } from './crawl.js'
+import { crawlPage } from './crawl.js'
+import { printReport } from './report.js'
 
 async function main() {
 
@@ -19,7 +20,7 @@ async function main() {
 
     const pages = await crawlPage(baseURL,baseURL,{})
     
-    console.log(pages)
+    printReport(pages)
     
 }
 
